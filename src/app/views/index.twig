@@ -1,6 +1,38 @@
 {% extends 'layout/base.twig' %}
-{% block title %}gallery{% endblock %}
+{% block title %}Portfolio{% endblock %}
 {% block body %}
-
+    {% include 'components/portfolio.twig' with
+        {
+            'list' :  [
+            {
+                'logo' : '../images/png_sprite/technomart.png',
+                'link' : '#',
+                'title' : 'Техномарт',
+                'img' : '../images/technomart.jpg',
+                'btn_for' : 'portfolio__btn--technomart',
+            },
+            {
+                'logo' : '../images/png_sprite/mishka.png',
+                'link' : '/',
+                'title' : 'Мишка',
+                'img' : '../images/mishka.jpg',
+                'btn_for' : 'portfolio__btn--mishka',
+            },
+            {
+                'logo' : '../images/png_sprite/cat-energy.png',
+                'link' : '#',
+                'title' : 'Энергия кошки',
+                'img' : '../images/cat-energy.jpg',
+                'btn_for' : 'portfolio__btn--cat-energy',
+            },
+            {
+                'logo' : '../images/png_sprite/gallery-logo.png',
+                'link' : '#',
+                'title' : 'Галерея',
+                'img' : '../images/gallery.jpg',
+                'btn_for' : 'portfolio__btn--gallery',
+            },
+        ]
+        } %}
 
 {% endblock %}

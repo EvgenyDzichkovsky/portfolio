@@ -1,0 +1,145 @@
+.portfolio {
+  margin-top: 50px;
+
+  &__list {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    position: relative;
+    border-radius: 5px;
+    padding: 5px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 260px;
+    min-height: 360px;
+    transition: 0.3s;
+    perspective: 1000px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+
+  &__front-side, &__back-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+  }
+
+  &__front-side {
+    background: #fff;
+  }
+
+  &__back-side {
+    transform: rotateY(180deg);
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    h3 {
+      font-weight: 500;
+      font-size: 30px;
+      font-family: 'OswaldRegular', sans-serif;
+    }
+  }
+
+  &__btn {
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 14px 80px;
+    color: #ffffff;
+    transition: 0.3s;
+    border-radius: 3px;
+
+    &--technomart {
+      background: #ee3643;
+      font-family: 'Cuprum', sans-serif;
+      letter-spacing: 2px;
+
+      &:hover {
+        background: #ca2c37;
+        transition: 0.3s;
+      }
+
+      &:active {
+        background: #ba2732;
+        transition: 0s;
+      }
+    }
+
+    &--mishka {
+      background: #ffffff;
+      border: 2px solid #444444;
+      color: #000;
+      font-family: 'OpenSansRegular', sans-serif;
+
+      &:hover {
+        background: #444444;
+        color: #ffffff;
+        transition: 0.3s;
+      }
+
+      &:active {
+        color: #7c7c7c;
+        transition: 0s;
+      }
+    }
+
+    &--cat-energy {
+      background: #68b738;
+      font-family: 'OswaldRegular', sans-serif;
+      letter-spacing: 2px;
+
+      &:hover {
+        background: #5eaa2f;
+        transition: 0.3s;
+      }
+
+      &:active {
+        color: #8fc46e;
+        transition: 0s;
+      }
+    }
+
+    &--gallery {
+      background: lightgray;
+
+      &:hover {
+        background: grey;
+      }
+
+      &:active {
+        opacity: 0.8;
+        transition: 0s;
+      }
+    }
+  }
+
+  &__item:hover &__front-side {
+    transform: rotateY(180deg);
+
+  }
+
+  &__item:hover &__back-side {
+    transform: rotateY(360deg);
+  }
+}
